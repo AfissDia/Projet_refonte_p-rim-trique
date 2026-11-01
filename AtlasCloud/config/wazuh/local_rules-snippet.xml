@@ -1,0 +1,8 @@
+<!-- Ajouter ce groupe au local_rules.xml EXISTANT côté Manager. -->
+<group name="projet5,modsecurity,sqli,">
+  <rule id="100501" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="log" type="pcre2">942100</field>
+    <description>Projet 5 - Injection SQL detectee par ModSecurity CRS 942100</description>
+  </rule>
+</group>

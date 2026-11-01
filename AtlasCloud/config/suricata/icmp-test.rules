@@ -1,0 +1,4 @@
+# Exemple reconstitué ; le test d'origine a utilisé SID 1000001 sur pfSense/Suricata.
+alert icmp 192.168.100.10 any -> 192.168.100.1 any (msg:"P5 LAB - ICMP Ubuntu vers pfSense"; sid:1000001; rev:1;)
+# Variante IPS de laboratoire (NE PAS activer en même temps que la règle de même SID) :
+# drop icmp 192.168.100.10 any -> 192.168.100.1 any (msg:"P5 LAB - IPS DROP ICMP Ubuntu vers pfSense"; sid:1000001; rev:2;)

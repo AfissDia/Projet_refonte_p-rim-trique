@@ -1,0 +1,13 @@
+flowchart LR
+  Win[Windows / navigateur & PowerShell]
+  pf[pfSense + Suricata\nLAN 192.168.100.1]
+  Ub[Ubuntu 192.168.100.10]
+  Waf[Nginx + ModSecurity / CRS\n8080]
+  Shop[Juice Shop\n3000]
+  Agent[Wazuh Agent ID001]
+  Wz[Wazuh Server 192.168.100.20\nManager, Indexer, Dashboard]
+  Win -.->|NetBird 8080 pendant phase ZTNA| Waf
+  pf <-->|SOC-NET phase pare-feu| Ub
+  Ub --> Waf --> Shop
+  Ub --> Agent -->|1514/TCP phase SOC| Wz
+  Win -->|NAT 8443/2223| Wz

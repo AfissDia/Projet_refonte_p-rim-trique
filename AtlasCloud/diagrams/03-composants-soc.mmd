@@ -1,0 +1,9 @@
+flowchart TB
+  Test[Requête SQLi contrôlée] --> WAF[WAF ModSecurity\nCRS 942100]
+  WAF -->|Seuil 8 ≥ 5| BLOCK[CRS 949110 / HTTP 403]
+  WAF --> AUDIT[Audit JSON ModSecurity]
+  AUDIT --> DOCKER[Docker json-file / champ log]
+  DOCKER --> LOG[Wazuh Agent / localfile json]
+  LOG --> MANAGER[Wazuh Manager / règle 100501 niveau 10]
+  MANAGER --> INDEX[Wazuh Indexer]
+  INDEX --> DASH[Threat Hunting / agent p5-client-01]

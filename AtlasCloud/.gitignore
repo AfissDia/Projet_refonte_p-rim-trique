@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+*.swp
+__pycache__/
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+*.ova
+*.vdi
+*.vmdk
+alerts.json
+*.pcap

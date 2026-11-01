@@ -1,0 +1,7 @@
+# Facultatif : à utiliser UNIQUEMENT si le peer NetBird 100.76.144.250 est présent.
+# L'utilisation de plusieurs fichiers Compose doit être vérifiée avec `docker compose config`.
+# ATTENTION : la fusion de listes de ports Compose peut ajouter le port ; comparer le résultat réel.
+services:
+  waf:
+    ports:
+      - "100.76.144.250:8080:8080"

@@ -1,0 +1,8 @@
+<!-- EXEMPLE à insérer DANS l'ossec_config existant de l'agent Ubuntu.
+     Remplacer ID_CONTENEUR par l'ID courant de p5-waf :
+     sudo docker inspect -f '{{.LogPath}}' p5-waf
+     IMPORTANT : le chemin change après une recréation du conteneur. -->
+<localfile>
+  <log_format>json</log_format>
+  <location>/var/lib/docker/containers/ID_CONTENEUR/ID_CONTENEUR-json.log</location>
+</localfile>
